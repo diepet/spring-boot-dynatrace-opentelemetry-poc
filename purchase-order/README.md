@@ -25,4 +25,18 @@ curl -X GET -H "Content-Type: application/json"  http://localhost:8080/api/purch
 
 ## Build instructions
 
-Just launch 
+Requirements:
+
+* JDK 11
+
+From the `purchase-order` folder just launch:
+
+```shell
+.mvnw install
+```
+
+and run the application with:
+
+```shell
+java -jar target/purchase-order-0.0.1-SNAPSHOT.jar
+```
