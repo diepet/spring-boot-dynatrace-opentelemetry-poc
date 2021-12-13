@@ -19,6 +19,8 @@
 		<spring-cloud.version>2021.0.0</spring-cloud.version>
 		<!-- SPRING CLOUD SLEUTH OTEL VERSION -->
 		<spring-cloud-sleuth-otel.version>1.1.0-M4</spring-cloud-sleuth-otel.version>
+		<!-- For fixing critical log4j2 vulnerability -->
+		<log4j2.version>2.15.0</log4j2.version>
 	</properties>
 
 	<dependencies>
