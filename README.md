@@ -1,7 +1,28 @@
 # spring-boot-dynatrace-opentelemetry-poc
+
 A POC for testing the Dynatrace integration with OpenTelemetry
 
+# Build Instructions
+
+Requirements:
+
+* JDK 11
+
+From the root folder of this repository just launch:
+
+```shell
+.mvnw install
+```
+
+and all the microservices inside it will be compiled.
+
 # POC Microservices
+
+The microservices are built by using:
+
+# Spring Boot ver.2.6.1
+# Spring Cloud ver.2021.0.0
+# Spring Cloud Otel ver.1.1.0-M4
 
 ## purchase-order
 
@@ -28,19 +49,16 @@ curl -X GET -H "Content-Type: application/json"  http://localhost:8080/api/purch
 curl -X GET -H "Content-Type: application/json"  http://localhost:8080/api/purchaseorder/1
 ```
 
-### Build instructions
+## Run application
 
-Requirements:
-
-* JDK 11
-
-From the `purchase-order` folder just launch:
+Just run this for launch it on 8080 port:
 
 ```shell
-.mvnw install
+java -jar purchase-order/target/purchase-order-0.0.1-SNAPSHOT.jar
 ```
 
-and run the application with:
+If you want to launch it on another port:
 
 ```shell
-java -jar target/purchase-order-0.0.1-SNAPSHOT.jar
+java -Dserver.port=8081 -jar purchase-order/target/purchase-order-0.0.1-SNAPSHOT.jar
+```
