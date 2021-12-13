@@ -1,5 +1,7 @@
 package com.acme.order.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,4 +51,18 @@ public class PurchaseOrderController {
 		return ResponseEntity.ok(purchaseOrder);
 		
 	}
+	
+	@GetMapping("/purchaseorder")
+	public ResponseEntity<List<PurchaseOrder>> getOrders() {
+
+		LOGGER.info("New get request for retrieving all the purchase orders");
+
+		List<PurchaseOrder> purchaseOrderList = purchaseOrderService.getPurchaseOrders();
+		
+		LOGGER.info("Retrieved {} purchase orders", purchaseOrderList.size());
+		
+		return ResponseEntity.ok(purchaseOrderList);
+		
+	}	
+	
 }

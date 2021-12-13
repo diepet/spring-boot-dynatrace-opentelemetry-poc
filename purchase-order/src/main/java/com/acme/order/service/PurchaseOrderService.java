@@ -1,6 +1,8 @@
 package com.acme.order.service;
 
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,9 +37,30 @@ public class PurchaseOrderService {
 	@Transactional(readOnly = true)
 	public PurchaseOrder getPurchaseOrder(long id) {
 
+		LOGGER.info("Started transaction for retrieving purchase order having ID {}", id);
+		
 		Util.sleepForAWhile();
 
-		return purchaseOrderRepository.findById(id).get();
+		PurchaseOrder purchaseOrder = purchaseOrderRepository.findById(id).get();
+		
+		LOGGER.info("Fetched from database the purchase order {}", purchaseOrder);
+		
+		return purchaseOrder;
 	}
+	
+	@Transactional(readOnly = true)
+	public List<PurchaseOrder> getPurchaseOrders() {
+
+		LOGGER.info("Started transaction for retrieving all the purchase orders");
+		
+		Util.sleepForAWhile();
+
+		List<PurchaseOrder> result = purchaseOrderRepository.findAll();
+		
+		LOGGER.info("Fetched from database {} purchase orders", result.size());
+		
+		return result;
+	}
+	
 	
 }
