@@ -15,10 +15,10 @@ public class PurchaseOrder {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(name = "USER_CODE")
+	@Column(name = "USER_CODE", length = 32)
 	private String userCode;
 	
-	@Column(name = "DESCRIPTION")
+	@Column(name = "DESCRIPTION", length = 255)
 	private String description;
 
 	public Long getId() {
