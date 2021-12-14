@@ -22,6 +22,7 @@ The microservices are built by using:
 
 # Spring Boot ver.2.6.1
 # Spring Cloud ver.2021.0.0
+# OpenTelemtry 1.9.0
 # Spring Cloud Otel ver.1.1.0-M4
 
 ## purchase-order
