@@ -11,7 +11,7 @@ Requirements:
 From the root folder of this repository just launch:
 
 ```shell
-.mvnw install
+./mvnw install
 ```
 
 and all the microservices inside it will be compiled.
